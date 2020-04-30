@@ -56,7 +56,7 @@
                 <div class="mx-auto text-center">
                     <h3>COVID-19 Spread Projection & Comparison
 				</h3>
-					<p class="banp mx-auto mt-3">Analysis and projection of the spread of COVID-19, considering several important factors with two methods, the Kalman Filter and SEIR. Results of different states and people with different health conditions are shown.   </p>
+					<p class="banp mx-auto mt-3">Analysis and projection of the spread of COVID-19, considering several important factors with two methods, the Kalman Filter and SEIR. Results of different states are shown.   </p>
 					<a class="btn btn-primary mt-lg-5 mt-3 agile-link-bnr" href="#about" role="button">Learn More</a>
                 </div>
             </div>
@@ -64,7 +64,9 @@
 		<!-- about -->
 <section class="slide-wrapper" id="about">
 	<h2 class="w3_head mb-4">Data </h2>
-	<p class="iner mt-md-5">Data used for the Kalman filter and the SEIR model is obtained from Johns Hopkins University's CSSE GitHub database, which updates its data hourly throughout the day. The raw data format is a time-series of the confirmed cases with additional information such as locations by county, province and state. The earliest data point appears on January 22nd and each day after to the present day is recorded. In order to process the raw data, some preprocessing transformations including column combinations, and summation of cell values are performed in order to properly feed the data into our algorithmic models. The most updated set of data is used whenever the mathematical models are executed. </p>
+	<p class="iner mt-md-5">Data used for the Kalman filter and the SEIR model is obtained from Johns Hopkins University's CSSE GitHub database, which updates its data hourly throughout the day. </p>
+  <p class="iner mt-md-5 text-left">   </p>
+  <p class="iner mt-md-5">Preprocessing: The raw data format is a time-series of the confirmed cases with additional information such as locations by county, province and state. The earliest data point appears on January 22nd and each day after to the present day is recorded. In order to process the raw data, some preprocessing transformations including column combinations, and summation of cell values are performed in order to properly feed the data into our algorithmic models. The most updated set of data is used whenever the mathematical models are executed.
 </section>
 <!-- //about -->
 <div class="tlinks">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
@@ -76,15 +78,22 @@
 		<p class="iner mt-md-5 text-left">   </p>
 		<h6 class="w3_head mb-4 text-left"> 1. Kalman Filter</h6>
 		<img src="images/Kalman.png">
-		<p class="iner mt-md-5">  The Kalman filter is a recursive mathematical process that uses a combination of equations and actual data input to estimate the true value, and in this case the number of confirmed cases and the number of deaths based on a time series analysis. The algorithm can be real-time, meaning that the estimate can be calculated based on only the present input measurements and the previously calculated state transition matrix. </p>
+		<p class="iner mt-md-5">  The Kalman filter is a recursive mathematical process that uses a combination of equations and actual data input to estimate the true value, and in this case the number of confirmed cases and the number of deaths based on a time series analysis.
+      The algorithm can be real-time, meaning that the estimate can be calculated based on only the present input measurements and the previously calculated state transition matrix. </p>
 		<p class="iner mt-md-5 text-left">   </p>
 		<p class="iner mt-md-5">The overall methodology of the Kalman filter can be separated into two steps, predict (a priori) and update (a posteriori). Before the specific equations of these two phases are introduced, let us define some matrices and vectors used in the process: </p>
-		<img src="images/f1.png">
+    <p class="iner mt-md-5 text-left">   </p>
+    <p class="iner mt-md-5">One of the most crucial components of the Kalman filter used for prediction is the optimal gain.
+      A high gain indicates that the measurements are accurate and the estimates are unstable therefore more weight should be given the observation.
+      A low gain means that the observation is inaccurate and the estimates are stable; therefore a high weight should be given to the estimate.
+      This together with the pre-fit and post-fit residuals are self-correcting mechanisms to make sure that the filter is on track to converge to the true value.
+    <img src="images/f1.png">
 		<p class="iner mt-md-5 text-left">   </p>
 		<p class="iner mt-md-5">A 1-day prediction of the COVID-19 confirmed cases and deaths in several states can be calculated. And for multi-day prediction, the measurement of the current day is the prediction that was made based on the prior day. </p>
 		<p class="iner mt-md-5 text-left">   </p>
 		<h6 class="w3_head mb-4 text-left"> 2. SEIR Model</h6>
-		<p class="iner mt-md-5"> SEIR is a model to estimate the pandemic spreading trend based on population data. S, E, I, R respectively represents susceptible individuals, exposed individuals (infected but not yet infectious or symptomatic), infected individuals (severity increases with class i and we assume individuals must pass through all previous classes) and recovered individuals (now immune).  </p>
+		<p class="iner mt-md-5"> SEIR is a model to estimate the pandemic spreading trend based on population data. S, E, I, R respectively represents susceptible individuals, exposed individuals (infected but not yet infectious or symptomatic),
+      infected individuals (severity increases with class i and we assume individuals must pass through all previous classes) and recovered individuals (now immune).  </p>
 		<img src="images/f2.png">
 		<img src="images/f3.png">
 	</div>
@@ -93,7 +102,8 @@
 		<!-- news -->
        <div class="news" id="news">
 		<h3 class="w3_head mb-4 text-left"> Infections for States</h3>
-		<p class="iner mt-md-5 text-left"> In this part, we will show prediction of the number of infected people in the five states with the worst outbreaks and compare our prediction results with actual data. What's more, the spread of COVID-19 in the next two months will be predicted.  </p>
+		<p class="iner mt-md-5 text-left"> In this part, we will show prediction of the number of infected people in the five states with the worst outbreaks and compare our prediction results with actual data.
+      What's more, the spread of COVID-19 in the next three months will be predicted.  </p>
 		<p></p>
 		<p class="iner mt-md-5 text-left"> 1. Prediction results for five states.  </p>
 		<div class="Jhds">
@@ -170,7 +180,8 @@
 <!-- contact -->
 	 <section class="wedo" id="contact">
 	<h3 class="w3_head mb-4 text-left"> People with Different Health Conditions</h3>
-	<p class="iner mt-md-5"> In this part, we will show our prediction for total confirmed cases and deaths. We will also comapre the five states in those two categories.   </p>
+	<p class="iner mt-md-5"> In this part, we show our prediction for total confirmed cases and deaths.
+    We are also comparing the top five states in those two categories.   </p>
 		<div class="contact_grid_right mt-5 mx-auto text-left">
 		<div class="Ahds">
 			<input checked class="radio" type="radio" name="Ahds" id="Ahds1">
@@ -192,9 +203,11 @@
 	</section>
 	<section class="slide-wrapper" id="future">
 	<h2 class="w3_head mb-4">Challenges and future work</h2>
-	<p class="iner mt-md-5">For future work, we may consider more possible relevant parameters like medical services and population movement to further perform analysis and prediction of the spread of Covid-19. From a broader perspective, we can even change our project objects from the state level to the country level and comprehensively research the main factors which have the biggest influence on the infection speed. </p>
+	<p class="iner mt-md-5">For future work, we may consider more possible relevant parameters like medical services and population movement to further perform analysis and prediction of the spread of Covid-19.
+    From a broader perspective, we can even change our project objects from the state level to the country level and comprehensively research the main factors which have the biggest influence on the infection speed. </p>
     <p class="iner mt-md-5"> </p>
-	<p class="iner mt-md-5">What’s more, for the SEIR model, the infected population can be divided into concrete type Ii, which represents different disease severity. Then, we can further analyze the relationship between each disease stage with the level of medical services according to this severity.</p>
+	<p class="iner mt-md-5">What’s more, for the SEIR model, the infected population can be divided into concrete type Ii, which represents different disease severity.
+    Then, we can further analyze the relationship between each disease stage with the level of medical services according to this severity.</p>
 	</section>
 	 <!-- //contact -->
     </div>
